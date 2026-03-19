@@ -1,35 +1,117 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { Ionicons } from '@expo/vector-icons';
+import { View } from 'react-native';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
+        tabBarStyle: {
+          backgroundColor: '#0f172a', // dark navy
+          borderTopWidth: 0,
+          height: 70,
+          paddingBottom: 10,
+        },
+        tabBarActiveTintColor: '#38bdf8', // cyan
+        tabBarInactiveTintColor: '#64748b',
+        tabBarLabelStyle: {
+          fontSize: 12,
+          marginBottom: 5,
+        },
+      }}
+    >
       <Tabs.Screen
-        name="index"
+        name="home"
         options={{
           title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color, focused }) => (
+            <View>
+              <Ionicons
+                name="home-outline"
+                size={20}
+                color={color}
+                style={focused ? styles.glow : undefined}
+              />
+            </View>
+          ),
         }}
       />
+
       <Tabs.Screen
-        name="explore"
+        name="projects"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: 'Projects',
+          tabBarIcon: ({ color, focused }) => (
+            <View>
+              <Ionicons
+                name="grid-outline"
+                size={20}
+                color={color}
+                style={focused ? styles.glow : undefined}
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="ai"
+        options={{
+          title: 'AI',
+          tabBarIcon: ({ color,focused }) => (
+            <View>
+              <Ionicons
+                name="hardware-chip-outline"
+                size={20}
+                color={color}
+                style={focused ? styles.glow : undefined}
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="chat"
+        options={{
+          title: 'Chat',
+          tabBarIcon: ({ color,focused }) => (
+            <View>
+              <Ionicons
+                name="chatbubble-outline"
+                size={20}
+                color={color}
+                style={focused ? styles.glow : undefined}
+              />
+            </View>
+          ),
+        }}
+      />
+
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: 'Profile',
+          tabBarIcon: ({ color,focused }) => (
+            <View>
+              <Ionicons
+                name="person-outline"
+                size={20}
+                color={color}
+                style={focused ? styles.glow : undefined}
+              />
+            </View>
+          ),
         }}
       />
     </Tabs>
   );
+}
+
+const styles = {
+  glow:{
+    shadowColor: "#22d3ee",
+  }
 }
