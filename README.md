@@ -60,7 +60,18 @@ HackMate AI is a modern mobile application built with React Native (Expo) that h
 
 ## 📁 Project Structure
 
-app/ ├── (auth)/ │   └── auth.tsx ├── (tabs)/ │   ├── home.tsx │   ├── projects.tsx │   ├── ai.tsx │   ├── chat.tsx │   └── profile.tsx ├── chat/[id].tsx ├── project/[id].tsx ├── webview.tsx ├── _layout.tsx
+app/ ├── (auth)/ │  
+           └── auth.tsx 
+      ├── (tabs)/ │   
+              ├── home.tsx │   
+              ├── projects.tsx │   
+              ├── ai.tsx │   
+              ├── chat.tsx │  
+              └── profile.tsx
+      ├── chat/[id].tsx
+      ├── project/[id].tsx 
+      ├── webview.tsx 
+      ├── _layout.tsx
 
 ---
 
@@ -68,7 +79,7 @@ app/ ├── (auth)/ │   └── auth.tsx ├── (tabs)/ │   ├─�
 
 ### 1. Clone the repo
 
-git clone https://github.com/your-username/hackmate-ai.git cd hackmate-ai
+git clone [https://github.com/your-username/hackmate-ai.git](https://github.com/codewithdhanus/hackmate-ai.git) cd hackmate-ai
 
 ### 2. Install dependencies
 
